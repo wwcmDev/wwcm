@@ -3,59 +3,61 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
+import photo from "../../public/photo.png";
 
 const Hero = () => {
   return (
-    <Container className="h-100 d-flex align-items-center">
+    <Container className="h-100 d-flex align-items-center ">
       <Row className="align-items-center">
-        <Col lg={6} className="mb-5 mb-lg-0" data-aos="fade-right">
-          <h1 className="display-4 fw-bold mb-4">
-            Hi, I'm <span className="text-primary">Your Name</span>
+        <Col lg={6} className="my-5 mb-lg-0" data-aos="fade-right">
+          <h1 className="title display-4 fw-bold mb-1">
+            Hi, I'm <span className="text-primary">Madhuranga</span>
           </h1>
           
           <TypeAnimation
             sequence={[
               'Undergraduate Student',
               2000,
-              'Software Developer',
+              'Full Stack Software Developer',
               2000,
-              'UI/UX Designer',
+              'Cybersecurity Enthusiast',
               2000
             ]}
             wrapper="h2"
-            className="h3 text-secondary mb-4"
+            className="subtitle text-secondary mb-4"
             repeat={Infinity}
           />
           
-          <p className="lead text-muted mb-5">
-            I'm passionate about [your field/major] with a focus on [your specialization/interests]. 
-            Currently pursuing my degree at [Your University].
+          <p className="lead  mb-5">
+          I'm passionate about full-stack software development, networking, and cybersecurity, with a focus on building secure and scalable applications. Currently pursuing my degree at Cardiff Metropolitan University.
           </p>
           
-          <div className="d-flex gap-3 mb-5">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon text-dark fs-4">
+          <div className="icon-area gap-3 mb-5">
+            <a href="https://github.com/wwcmDev" target="_blank" rel="noopener noreferrer" className="social-icon fs-4">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon text-dark fs-4">
+            <a href="https://www.linkedin.com/in/wwcm2000/" target="_blank" rel="noopener noreferrer" className="social-icon fs-4">
               <FaLinkedin />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon text-dark fs-4">
-              <FaTwitter />
             </a>
           </div>
           
-          <div className="d-flex gap-3">
+          <div className="buttons d-flex gap-3">
             <Button
-              as={Link}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = 'Dev_V1.0.pdf'; 
+                link.download = 'Dev_V1.0.pdf'; 
+                link.click();
+              }}
               to="projects"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
-              variant="primary"
+              variant="btn btn-primary"
               size="lg"
             >
-              View My Work
+              View My CV
             </Button>
             
             <Button
@@ -65,7 +67,7 @@ const Hero = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              variant="outline-primary"
+              variant="btn btn-outline"
               size="lg"
             >
               Contact Me
@@ -82,9 +84,9 @@ const Hero = () => {
             alignItems: 'center',
             justifyContent: 'center',
             color: 'white',
-            fontSize: '1.5rem'
+            fontSize: '1.5rem',
           }}>
-            Your Photo Here
+            <img src={photo} alt="Portfolio Logo" className="photo img-fluid" />
           </div>
         </Col>
       </Row>
