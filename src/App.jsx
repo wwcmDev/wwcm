@@ -26,11 +26,11 @@ function App() {
       <Navbar scrolled={scrolled} />
       
       <main>
-        <section id="home" className="hero-section">
+        <section id="home" className="hero-section sec-p-tb mt-5">
           <Hero />
         </section>
         
-        <section id="about" className="py-5">
+        <section id="about" className="sec-p-tb">
           <Container>
             <About />
           </Container>

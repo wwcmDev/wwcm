@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from "../../public/assest/image/logo-white.png";
 import { Navbar as BsNavbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
 
@@ -18,8 +19,7 @@ const Navbar = ({ scrolled }) => {
     <BsNavbar 
       expand="lg" 
       fixed="top" 
-      className={`py-3 ${scrolled ? 'scrolled' : 'bg-transparent'}`}
-      expanded={expanded}
+      className={`py-3 mx-0 px-0 w-100`}
     >
       <Container>
         <BsNavbar.Brand 
@@ -31,7 +31,7 @@ const Navbar = ({ scrolled }) => {
           duration={500}
           className="fw-bold text-primary cursor-pointer"
         >
-          Portfolio
+          <img src={logo} alt="Portfolio Logo" className="main-logo img-fluid" />
         </BsNavbar.Brand>
         
         <BsNavbar.Toggle 
